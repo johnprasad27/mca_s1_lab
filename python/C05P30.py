@@ -6,7 +6,7 @@ data = [
     {"Name": "Bob", "Age": "22", "Job": "Student"}
 ]
 with open(csv_path, "w", newline="", encoding="utf-8") as file:
-    writer = csv.DictWriter(f, fieldnames=["Name", "Age", "Job"])
+    writer = csv.DictWriter(file, fieldnames=["Name", "Age", "Job"])
     writer.writeheader()
     writer.writerows(data)
 with open(csv_path, "r", newline="", encoding="utf-8") as f:
