@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript String and Math Functions</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 20px;
+        }
+        section {
+            border: 1px solid #000;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        button {
+            margin: 3px;
+        }
+        .output {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+        /* String functions */
+        function showLength() {
+            var s = document.getElementById("str").value;
+            document.getElementById("strOut").innerHTML = "Length: " + s.length;
+        }
+
+        function toUpper() {
+            var s = document.getElementById("str").value;
+            document.getElementById("strOut").innerHTML = s.toUpperCase();
+        }
+
+        function toLower() {
+            var s = document.getElementById("str").value;
+            document.getElementById("strOut").innerHTML = s.toLowerCase();
+        }
+
+        function firstChar() {
+            var s = document.getElementById("str").value;
+            document.getElementById("strOut").innerHTML = s.charAt(0);
+        }
+
+        /* Math functions */
+        function roundNum() {
+            var n = document.getElementById("num").value;
+            document.getElementById("mathOut").innerHTML = Math.round(n);
+        }
+
+        function floorNum() {
+            var n = document.getElementById("num").value;
+            document.getElementById("mathOut").innerHTML = Math.floor(n);
+        }
+
+        function ceilNum() {
+            var n = document.getElementById("num").value;
+            document.getElementById("mathOut").innerHTML = Math.ceil(n);
+        }
+
+        function sqrtNum() {
+            var n = document.getElementById("num").value;
+            document.getElementById("mathOut").innerHTML = Math.sqrt(n);
+        }
+
+        function randomNum() {
+            document.getElementById("mathOut").innerHTML = Math.random();
+        }
+    </script>
+</head>
+<body>
+
+<h1>JavaScript Predefined Functions</h1>
+
+<!-- STRING SECTION -->
+<section>
+    <h2>String Object Functions</h2>
+
+    Enter a String:
+    <input type="text" id="str">
+
+    <br><br>
+
+    <button onclick="showLength()">Length</button>
+    <button onclick="toUpper()">Uppercase</button>
+    <button onclick="toLower()">Lowercase</button>
+    <button onclick="firstChar()">First Character</button>
+
+    <div class="output" id="strOut"></div>
+</section>
+
+<!-- MATH SECTION -->
+<section>
+    <h2>Math Object Functions</h2>
+
+    Enter a Number:
+    <input type="number" id="num">
+
+    <br><br>
+
+    <button onclick="roundNum()">Round</button>
+    <button onclick="floorNum()">Floor</button>
+    <button onclick="ceilNum()">Ceil</button>
+    <button onclick="sqrtNum()">Square Root</button>
+    <button onclick="randomNum()">Random</button>
+
+    <div class="output" id="mathOut"></div>
+</section>
+
+</body>
+</html>

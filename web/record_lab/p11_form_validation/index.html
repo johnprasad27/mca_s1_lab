@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+    <style>
+        body {
+            font-family: Arial;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            padding: 8px;
+        }
+    </style>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var age = document.getElementById("age").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirm").value;
+
+            name = name.trim();
+
+            if (name === "") {
+                alert("Name cannot be empty");
+                return false;
+            }
+
+            var namePattern = /^[A-Za-z ]+$/;
+            if (!namePattern.test(name)) {
+                alert("Name should contain only alphabets");
+                return false;
+            }
+
+            if (age === "" || age < 18 || age > 60) {
+                alert("Age must be between 18 and 60");
+                return false;
+            }
+
+            if (email === "" || email.indexOf("@") === -1 || email.indexOf(".") === -1) {
+                alert("Enter a valid email address");
+                return false;
+            }
+
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long");
+                return false;
+            }
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match");
+                return false;
+            }
+
+            alert("Form submitted successfully");
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+<h2>Form Validation Using JavaScript</h2>
+
+<form onsubmit="return validateForm()">
+
+<table>
+    <tr>
+        <td>Name:</td>
+        <td><input type="text" id="name"></td>
+    </tr>
+
+    <tr>
+        <td>Age:</td>
+        <td><input type="number" id="age"></td>
+    </tr>
+
+    <tr>
+        <td>Email:</td>
+        <td><input type="text" id="email"></td>
+    </tr>
+
+    <tr>
+        <td>Password:</td>
+        <td><input type="password" id="password"></td>
+    </tr>
+
+    <tr>
+        <td>Confirm Password:</td>
+        <td><input type="password" id="confirm"></td>
+    </tr>
+
+    <tr>
+        <td colspan="2" align="center">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </td>
+    </tr>
+</table>
+
+</form>
+
+</body>
+</html>

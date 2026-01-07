@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Examination</title>
+
+    <script>
+        function evaluateExam() {
+            var score = 0;
+
+            if (document.getElementById("q1a").checked)
+                score++;
+
+            if (document.getElementById("q2b").checked)
+                score++;
+
+            if (document.getElementById("q3c").checked)
+                score++;
+
+            alert("Your Score is: " + score + " / 3");
+        }
+    </script>
+</head>
+<body>
+
+<h2>Online Examination</h2>
+
+<form>
+
+<b>1. HTML stands for?</b><br>
+<input type="radio" name="q1" id="q1a"> Hyper Text Markup Language<br>
+<input type="radio" name="q1"> High Text Machine Language<br>
+<input type="radio" name="q1"> Hyperlinks Text Mark Language<br><br>
+
+<b>2. JavaScript is a?</b><br>
+<input type="radio" name="q2"> Markup Language<br>
+<input type="radio" name="q2" id="q2b"> Scripting Language<br>
+<input type="radio" name="q2"> Database Language<br><br>
+
+<b>3. Which tag is used for JavaScript?</b><br>
+<input type="radio" name="q3"> &lt;js&gt;<br>
+<input type="radio" name="q3"> &lt;javascript&gt;<br>
+<input type="radio" name="q3" id="q3c"> &lt;script&gt;<br><br>
+
+<input type="button" value="Submit Exam" onclick="evaluateExam()">
+
+</form>
+
+</body>
+</html>

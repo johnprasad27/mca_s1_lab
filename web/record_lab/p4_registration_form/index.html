@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            padding: 8px;
+        }
+    </style>
+
+    <script>
+        function checkPassword() {
+            var pwd = document.getElementById("password").value;
+            var repwd = document.getElementById("repassword").value;
+
+            if (pwd !== repwd) {
+                alert("Passwords do not match!");
+                return false;   // stop form submission
+            }
+            return true;        // allow form submission
+        }
+    </script>
+</head>
+<body>
+
+<h2>Registration Form</h2>
+
+<form onsubmit="return checkPassword()">
+
+<table>
+    <tr>
+        <td>Name:</td>
+        <td><input type="text" name="name"></td>
+    </tr>
+
+    <tr>
+        <td>Age:</td>
+        <td><input type="number" name="age"></td>
+    </tr>
+
+    <tr>
+        <td>Password:</td>
+        <td><input type="password" id="password" name="password"></td>
+    </tr>
+
+    <tr>
+        <td>Re-enter Password:</td>
+        <td><input type="password" id="repassword" name="repassword"></td>
+    </tr>
+
+    <tr>
+        <td>Security Question:</td>
+        <td>
+            <input type="radio" name="question"> What is your birth place?<br>
+            <input type="radio" name="question"> What is your pet name?<br>
+            <input type="radio" name="question"> What is your favourite color?<br>
+            <input type="radio" name="question"> What is your favourite food?
+        </td>
+    </tr>
+
+    <tr>
+        <td>Email ID:</td>
+        <td><input type="email" name="email"></td>
+    </tr>
+
+    <tr>
+        <td>Languages Known:</td>
+        <td>
+            <input type="checkbox" name="lang"> Malayalam
+            <input type="checkbox" name="lang"> Hindi
+            <input type="checkbox" name="lang"> English
+        </td>
+    </tr>
+
+    <tr>
+        <td>Phone Number:</td>
+        <td><input type="tel" name="phone"></td>
+    </tr>
+
+    <tr>
+        <td>Upload CV:</td>
+        <td><input type="file" name="cv"></td>
+    </tr>
+
+    <tr>
+        <td colspan="2" align="center">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </td>
+    </tr>
+</table>
+
+</form>
+
+</body>
+</html>

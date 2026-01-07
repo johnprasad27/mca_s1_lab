@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Demo</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Internal CSS -->
+    <style>
+        #mainHeading {
+            color: blue;
+            text-align: center;
+        }
+
+        .internalText {
+            color: green;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<h1 id="mainHeading">Cascading Style Sheets (CSS)</h1>
+
+<!-- Inline CSS -->
+<p style="color:red; font-weight:bold;">
+    This paragraph uses INLINE CSS.
+</p>
+
+<p class="internalText">
+    This paragraph uses CLASS selector with INTERNAL CSS.
+</p>
+
+<p id="externalPara">
+    This paragraph uses ID selector with EXTERNAL CSS.
+</p>
+
+<div class="box">
+    This div uses CLASS selector from EXTERNAL CSS.
+</div>
+
+</body>
+</html>

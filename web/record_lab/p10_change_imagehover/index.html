@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Over Event</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+
+    <script>
+        function mouseOver() {
+            document.getElementById("pic").src = "image2.jpg";
+            document.getElementById("text").innerHTML = "Mouse is over the content";
+        }
+
+        function mouseOut() {
+            document.getElementById("pic").src = "image1.jpg";
+            document.getElementById("text").innerHTML = "Move mouse over the image";
+        }
+    </script>
+</head>
+<body>
+
+<h2 id="text">Move mouse over the image</h2>
+
+<img src="image1.jpg" id="pic"
+     onmouseover="mouseOver()"
+     onmouseout="mouseOut()">
+
+</body>
+</html>

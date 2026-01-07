@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Hex Color Generator</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding-top: 50px;
+        }
+    </style>
+
+    <script>
+        function changeColor() {
+            var hex = "#";
+            var chars = "0123456789ABCDEF";
+
+            for (var i = 0; i < 6; i++) {
+                hex += chars[Math.floor(Math.random() * 16)];
+            }
+
+            document.body.style.backgroundColor = hex;
+        }
+    </script>
+</head>
+<body>
+
+<h2>Random Background Color Generator</h2>
+
+<button onclick="changeColor()">Change Color</button>
+
+</body>
+</html>

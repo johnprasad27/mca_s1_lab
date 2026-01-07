@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calendar Generator</title>
+    <!-- <style>
+        body { font-family: Arial; }
+        .month {
+            display: inline-block;
+            margin: 10px;
+            vertical-align: top;
+        }
+        table {
+            border-collapse: collapse;
+            width: 220px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 4px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style> -->
+
+    <script>
+        function generateCalendar() {
+            var year = document.getElementById("year").value;
+            var output = document.getElementById("calendar");
+            output.innerHTML = "";
+
+            var months = [
+                "January","February","March","April","May","June",
+                "July","August","September","October","November","December"
+            ];
+            var days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+
+            for (var m = 0; m < 12; m++) {
+                var firstDay = new Date(year, m, 1).getDay();
+                var totalDays = new Date(year, m + 1, 0).getDate();
+
+                var html = "<div class='month'>";
+                html += "<h3>" + months[m] + " " + year + "</h3>";
+                html += "<table><tr>";
+
+                for (var d = 0; d < 7; d++) {
+                    html += "<th>" + days[d] + "</th>";
+                }
+                html += "</tr><tr>";
+
+                for (var i = 0; i < firstDay; i++) {
+                    html += "<td></td>";
+                }
+
+                for (var date = 1; date <= totalDays; date++) {
+                    if ((firstDay + date - 1) % 7 === 0) {
+                        html += "</tr><tr>";
+                    }
+                    html += "<td>" + date + "</td>";
+                }
+
+                html += "</tr></table></div>";
+                output.innerHTML += html;
+            }
+        }
+    </script>
+</head>
+<body>
+
+<h2>Generate Calendar</h2>
+
+Enter Year:
+<input type="number" id="year" placeholder="e.g. 2026">
+<button onclick="generateCalendar()">Generate</button>
+
+<hr>
+
+<div id="calendar"></div>
+
+</body>
+</html>
