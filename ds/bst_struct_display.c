@@ -6,7 +6,7 @@ struct node {
     struct node *left, *right;
 };
 
-/* Create a new node */
+/* Create node */
 struct node* createNode(int value) {
     struct node* newNode = (struct node*)malloc(sizeof(struct node));
     newNode->data = value;
@@ -14,7 +14,7 @@ struct node* createNode(int value) {
     return newNode;
 }
 
-/* Insert into BST */
+/* Insert */
 struct node* insert(struct node* root, int value) {
     if (root == NULL)
         return createNode(value);
@@ -27,26 +27,23 @@ struct node* insert(struct node* root, int value) {
     return root;
 }
 
-/* Find minimum value node (used in delete) */
+/* Find minimum */
 struct node* findMin(struct node* root) {
     while (root->left != NULL)
         root = root->left;
     return root;
 }
 
-/* Delete a node from BST */
+/* Delete */
 struct node* deleteNode(struct node* root, int key) {
     if (root == NULL)
         return root;
 
     if (key < root->data)
         root->left = deleteNode(root->left, key);
-
     else if (key > root->data)
         root->right = deleteNode(root->right, key);
-
     else {
-        // Case 1 & 2: node with 0 or 1 child
         if (root->left == NULL) {
             struct node* temp = root->right;
             free(root);
@@ -58,7 +55,6 @@ struct node* deleteNode(struct node* root, int key) {
             return temp;
         }
 
-        // Case 3: node with two children
         struct node* temp = findMin(root->right);
         root->data = temp->data;
         root->right = deleteNode(root->right, temp->data);
@@ -66,43 +62,23 @@ struct node* deleteNode(struct node* root, int key) {
     return root;
 }
 
-/* Traversals */
-void inorder(struct node* root) {
-    if (root != NULL) {
-        inorder(root->left);
-        printf("%d ", root->data);
-        inorder(root->right);
-    }
-}
-
-void preorder(struct node* root) {
-    if (root != NULL) {
-        printf("%d ", root->data);
-        preorder(root->left);
-        preorder(root->right);
-    }
-}
-
-void postorder(struct node* root) {
-    if (root != NULL) {
-        postorder(root->left);
-        postorder(root->right);
-        printf("%d ", root->data);
-    }
-}
-
-/* Search */
-int search(struct node* root, int key) {
+/* Tree structure display */
+void printTree(struct node* root, int space) {
     if (root == NULL)
-        return 0;
-    if (root->data == key)
-        return 1;
-    if (key < root->data)
-        return search(root->left, key);
-    return search(root->right, key);
+        return;
+
+    space += 5;
+
+    printTree(root->right, space);
+
+    printf("\n");
+    for (int i = 5; i < space; i++)
+        printf(" ");
+    printf("%d\n", root->data);
+
+    printTree(root->left, space);
 }
 
-/* MAIN */
 int main() {
     struct node* root = NULL;
     int choice, value;
@@ -110,12 +86,9 @@ int main() {
     do {
         printf("\n--- BST MENU ---\n");
         printf("1. Insert\n");
-        printf("2. Inorder Traversal\n");
-        printf("3. Preorder Traversal\n");
-        printf("4. Postorder Traversal\n");
-        printf("5. Search\n");
-        printf("6. Delete\n");
-        printf("7. Exit\n");
+        printf("2. Delete\n");
+        printf("3. Display Tree Structure\n");
+        printf("4. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
 
@@ -127,47 +100,25 @@ int main() {
                 break;
 
             case 2:
-                printf("Inorder: ");
-                inorder(root);
-                printf("\n");
+                printf("Enter value to delete: ");
+                scanf("%d", &value);
+                root = deleteNode(root, value);
                 break;
 
             case 3:
-                printf("Preorder: ");
-                preorder(root);
+                printf("\nBinary Search Tree Structure:\n");
+                printTree(root, 0);
                 printf("\n");
                 break;
 
             case 4:
-                printf("Postorder: ");
-                postorder(root);
-                printf("\n");
-                break;
-
-            case 5:
-                printf("Enter value to search: ");
-                scanf("%d", &value);
-                if (search(root, value))
-                    printf("Element found\n");
-                else
-                    printf("Element not found\n");
-                break;
-
-            case 6:
-                printf("Enter value to delete: ");
-                scanf("%d", &value);
-                root = deleteNode(root, value);
-                printf("Deletion completed\n");
-                break;
-
-            case 7:
                 printf("Exiting program...\n");
                 break;
 
             default:
                 printf("Invalid choice!\n");
         }
-    } while (choice != 7);
+    } while (choice != 4);
 
     return 0;
 }
