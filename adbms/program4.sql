@@ -1,0 +1,14 @@
+DELIMITER //
+
+CREATE PROCEDURE even_odd(IN num INT)
+BEGIN
+IF num%2=0 THEN
+SELECT 'Even';
+ELSE
+SELECT 'Odd';
+END IF;
+END //
+
+DELIMITER ;
+
+CALL even_odd(8);
