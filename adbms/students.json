@@ -1,0 +1,113 @@
+[
+  {
+    "name": {
+      "fname": "Varsha",
+      "lname": "Raj"
+    },
+    "gender": "female",
+    "course": "MCA",
+    "department": "Computer",
+    "mark": 95,
+    "grade": "A+",
+    "place": "Kollam",
+    "contact": "9876543210"
+  },
+
+  {
+    "name": {
+      "fname": "Anu",
+      "lname": "Priya"
+    },
+    "gender": "female",
+    "course": "MCA",
+    "department": "Computer",
+    "mark": 85,
+    "grade": "A",
+    "place": "Thiruvananthapuram",
+    "contact": "9876500000"
+  },
+
+  {
+    "name": {
+      "fname": "Meera",
+      "lname": "Das"
+    },
+    "gender": "female",
+    "course": "MCA",
+    "department": "Computer",
+    "mark": 70,
+    "grade": "B",
+    "place": "Ernakulam",
+    "contact": "9123456780"
+  },
+
+  {
+    "name": {
+      "fname": "Vishnu",
+      "lname": "Mohan"
+    },
+    "gender": "male",
+    "course": "MCA",
+    "department": "Computer",
+    "mark": 98,
+    "grade": "A+",
+    "place": "Kollam",
+    "contact": "9988776655"
+  },
+
+  {
+    "name": {
+      "fname": "Rahul",
+      "lname": "Krishna"
+    },
+    "gender": "male",
+    "course": "Mechanical",
+    "department": "Mechanical",
+    "mark": 92,
+    "grade": "A+",
+    "place": "Thrissur",
+    "contact": "9000000001"
+  },
+
+  {
+    "name": {
+      "fname": "Vivek",
+      "lname": "S"
+    },
+    "gender": "male",
+    "course": "Mechanical",
+    "department": "Mechanical",
+    "mark": 88,
+    "grade": "A",
+    "place": "Kollam",
+    "contact": "9000000002"
+  },
+
+  {
+    "name": {
+      "fname": "Arjun",
+      "lname": "B"
+    },
+    "gender": "male",
+    "course": "Mechanical",
+    "department": "Mechanical",
+    "mark": 81,
+    "grade": "A",
+    "place": "Palakkad",
+    "contact": "9000000003"
+  },
+
+  {
+    "name": {
+      "fname": "Veena",
+      "lname": "K"
+    },
+    "gender": "female",
+    "course": "Mechanical",
+    "department": "Mechanical",
+    "mark": 75,
+    "grade": "B",
+    "place": "Kannur",
+    "contact": "9000000004"
+  }
+]
