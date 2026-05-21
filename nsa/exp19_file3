@@ -1,0 +1,7 @@
+2c2
+< line
+---
+> line2
+4,5d3
+< line4
+< line5

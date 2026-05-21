@@ -1,0 +1,22 @@
+#!/bin/bash
+
+echo "1001 RAM 97" > myfile2
+echo "1002 NEHA 89" >> myfile2
+echo "1010 DIVYA 77" >> myfile2
+echo "1025 RAHUL 65" >> myfile2
+echo "1012 ARUN 99" >> myfile2
+echo "1013 NISHA 76" >> myfile2
+
+# 2. Print the first 2 rows of the file myfile. 
+
+echo "First 2 rows:"
+
+head -2 myfile2
+
+# 3. Print the last 2 rows of the file myfile. 
+
+echo "First 2 rows:" 
+tail -2 myfile2
+
+#  4. Copy the contents of “myfile” into another file called mycopyfile 
+cp myfile mycopyfile 
