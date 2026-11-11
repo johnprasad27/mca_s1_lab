@@ -13,6 +13,7 @@ def main() -> None:
     kmeans.fit(features)
     labels = kmeans.labels_
 
+    plt.figure(figsize=(10, 4))
     plt.subplot(1, 2, 1)
     plt.scatter(features[:, 0], features[:, 1], c=iris.target,
                 cmap="prism", edgecolor="k")

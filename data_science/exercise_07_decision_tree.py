@@ -27,6 +27,22 @@ def main() -> None:
     plt.tight_layout()
     plt.show()
 
+    plt.figure(figsize=(16, 10))
+    plt.subplot(1, 2, 1)
+    plt.scatter(x_test[:, 0], x_test[:, 1], c=prediction,
+                cmap="viridis", edgecolor="k")
+    plt.title("Predicted classification")
+    plt.xlabel("Sepal length")
+    plt.ylabel("Sepal width")
+    plt.subplot(1, 2, 2)
+    plt.scatter(x_test[:, 0], x_test[:, 1], c=y_test,
+                cmap="viridis", edgecolor="k")
+    plt.title("Actual classification")
+    plt.xlabel("Sepal length")
+    plt.ylabel("Sepal width")
+    plt.tight_layout()
+    plt.show()
+
 
 if __name__ == "__main__":
     main()

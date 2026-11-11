@@ -20,13 +20,16 @@ def main() -> None:
     print("Mean squared error: %.2f" % mean_squared_error(y_test, prediction))
     print("R^2 score: %.2f" % r2_score(y_test, prediction))
 
-    plt.scatter(x_test, y_test, color="black")
+    plt.figure(figsize=(8, 6))
+    plt.scatter(x_test, y_test, color="black", label="Actual")
     sorted_indices = np.argsort(x_test[:, 0])
     plt.plot(x_test[sorted_indices], prediction[sorted_indices],
-             color="blue", linewidth=3)
+             color="blue", linewidth=3, label="Predicted")
     plt.xlabel("BMI")
     plt.ylabel("Diabetes progression")
     plt.title("Linear Regression: BMI vs Diabetes Progression")
+    plt.legend()
+    plt.tight_layout()
     plt.show()
 
 
